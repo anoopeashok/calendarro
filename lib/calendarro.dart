@@ -20,6 +20,7 @@ typedef void CurrentPageCallback(DateTime pageStartDate, DateTime pageEndDate);
 class Calendarro extends StatefulWidget {
   DateTime startDate;
   DateTime endDate;
+  int monthPosition;
   DisplayMode displayMode;
   SelectionMode selectionMode;
   DayTileBuilder dayTileBuilder;
@@ -38,6 +39,7 @@ class Calendarro extends StatefulWidget {
 
   Calendarro({
     Key key,
+    this.monthPosition;
     this.startDate,
     this.endDate,
     this.displayMode = DisplayMode.WEEKS,
@@ -275,7 +277,7 @@ class CalendarroState extends State<Calendarro> {
   }
 
   Widget _buildCalendarPageInMonthsMode(int position) {
-    DateRange pageDateRange = _calculatePageDateRangeInMonthsMode(position);
+    DateRange pageDateRange = _calculatePageDateRangeInMonthsMode(widget.monthPosition);
 
     return CalendarroPage(
       pageStartDate: pageDateRange.startDate,
