@@ -39,7 +39,7 @@ class Calendarro extends StatefulWidget {
 
   Calendarro({
     Key key,
-    this.monthPosition;
+    this.monthPosition,
     this.startDate,
     this.endDate,
     this.displayMode = DisplayMode.WEEKS,
