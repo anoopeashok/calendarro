@@ -39,7 +39,6 @@ class Calendarro extends StatefulWidget {
 
   Calendarro({
     Key key,
-    this.monthPosition,
     this.startDate,
     this.endDate,
     this.displayMode = DisplayMode.WEEKS,
@@ -277,13 +276,18 @@ class CalendarroState extends State<Calendarro> {
   }
 
   Widget _buildCalendarPageInMonthsMode(int position) {
-    DateRange pageDateRange = _calculatePageDateRangeInMonthsMode(widget.monthPosition);
+    DateRange pageDateRange = _calculatePageDateRangeInMonthsMode(position);
 
-    return CalendarroPage(
+    return Column(
+      crossAxisAlignment:CrossAxisAlignment.center,
+      children<Widget>[
+        Text('${pageDateRange.month}'),
+         CalendarroPage(
       pageStartDate: pageDateRange.startDate,
       pageEndDate: pageDateRange.endDate,
       weekdayLabelsRow: widget.weekdayLabelsRow,
-    );
+    )
+    ]);
   }
 
   DateRange _calculatePageDateRange(int pagePosition) {
