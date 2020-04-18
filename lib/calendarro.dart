@@ -280,7 +280,7 @@ class CalendarroState extends State<Calendarro> {
 
     return Column(
       crossAxisAlignment:CrossAxisAlignment.center,
-      children<Widget>:[
+      children:<Widget>[
         Text('${pageDateRange.month}'),
          CalendarroPage(
       pageStartDate: pageDateRange.startDate,
