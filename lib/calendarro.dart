@@ -280,7 +280,7 @@ class CalendarroState extends State<Calendarro> {
   Widget _buildCalendarPageInMonthsMode(int position) {
     DateRange pageDateRange = _calculatePageDateRangeInMonthsMode(position);
     var formatter = new DateFormat('MMMM-yyyy');
-    print('${formatter.format(pageDateRange.startDate)}');
+    print('${formatter.format(pageDateRange.startDate)}',style:TextStyle(fontWeight:FontWeight.bold,fontSize:16);
     return Column(
       crossAxisAlignment:CrossAxisAlignment.center,
       children:<Widget>[
